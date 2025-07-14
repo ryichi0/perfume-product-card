@@ -68,6 +68,17 @@ p{
     font-size: 1rem;
 }
  
+a{
+    text-decoration: none;
+
+    color: var(--cream);
+
+    cursor: pointer;
+    transition: color .3s;
+}
+a:hover{
+    color: var(--green-500);
+}
 
 img{
     width: 100%;
@@ -81,6 +92,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: .5rem;
 
     position: absolute;
     bottom: 0;
