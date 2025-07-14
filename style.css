@@ -1,0 +1,182 @@
+/* || Variables */
+:root{
+
+    /* Typography */
+    --font-family-heading : 'Fraunces';
+    --font-family-paragraph : 'Montserrat';
+
+    --font-weight-heading: 700;
+    --font-weight-paragraph-b: 700;
+    --font-weight-paragraph-l: 500;
+
+    --line-height-heading: 120%;
+    --line-height-paragraph: 190%;
+
+    --font-size-paragraph : 14px;
+
+    /* Colors */
+    --white: hsl(0, 0%, 100%);
+
+    --green-500: hsl(158, 36%, 37%);
+    --green-700: hsl(158, 42%, 18%);
+
+    --black: hsl(212, 21%, 14%);
+    --gray: hsl(228, 12%, 48%);
+    --cream: hsl(30, 38%, 92%);
+
+}
+
+/* General Style */
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    min-height: 100vh;
+    padding-inline: 2rem;
+    padding-block: 6rem;
+
+    font-family: var(--font-family-paragraph);
+    font-size: var(--font-size-paragraph);
+    font-weight: var(--font-weight-paragraph-l);
+    line-height: var(--line-height-paragraph);
+
+    color: var(--gray);
+    background-color: var(--cream);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: var(--font-family-heading);
+    font-size: clamp(2.2rem, 5vw, 2.4rem);
+    font-weight: var(--font-weight-heading);
+    line-height: var(--line-height-heading);
+
+    color: black;
+}
+
+button,
+p{
+    font-size: 1rem;
+}
+ 
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0px;
+
+    object-fit: cover;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    
+    text-align: center;
+
+    color: var(--white);
+    background-color: var(--green-700);
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+    margin-block-end: 6rem;
+    border-radius: 20px;
+
+    background-color: var(--white);
+}
+
+.card .card-overview{
+    display: grid;
+    gap: 2rem;
+
+    padding: 2rem;
+}
+
+.card-overview--category{
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+.card-overview--price{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+#after-discount{
+    font-family: var(--font-family-heading);
+    font-size: 2.4rem;
+    font-weight: var(--font-weight-heading);
+
+    color: var(--green-500);
+}
+#real-price{
+    font-size: 14px;
+
+}
+
+.card-overview--cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    padding-block: 1rem;
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--green-500);
+    color: var(--white);
+    
+    transition: background-color 0.4s;
+}
+
+.card-overview--cta:hover{
+    background-color: var(--green-700);
+}
+
+.card-overview--cta::before{
+    content: url(./assets/images/icon-cart.svg);
+}
+
+img.desktop{
+    display: none;
+}
+
+@media screen and (min-width:550px) {
+    main{
+        grid-template-columns: 1fr 1fr;
+
+    }
+    img.desktop{
+        display: flex;
+        border-radius: 20px 0 0 20px;
+    } 
+    img.mobile{
+        display: none;
+    }
+}
